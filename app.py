@@ -4,8 +4,6 @@ FIXED: fsspec dependency + loads exo_cleaned.csv once
 ALL ENDPOINTS PRESERVED (200+ lines)
 """
 
-# Get port from environment variable (Render provides this)
-PORT = int(os.environ.get('PORT', 5000))
 
 from flask import Flask, request, jsonify
 from flask_cors import CORS
@@ -14,6 +12,9 @@ import pandas as pd
 import numpy as np
 import os
 import json
+# Get port from environment variable (Render provides this)
+PORT = int(os.environ.get('PORT', 5000))
+
 
 app = Flask(__name__)
 CORS(app)
